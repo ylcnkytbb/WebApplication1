@@ -1,0 +1,31 @@
+﻿@model LoginViewModel  
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="row">
+    <div class="col-4 offset-4">
+        <h1 class="display-4 border-bottom text-center pb-2">@ViewData["Title"]</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 offset-4">
+       <form method="post"> 
+           <div asp-validation-summary="ModelOnly" class="text-danger small"></div> @*genel hataları göstermek için*@
+           <div class="form-grup mb-3">
+               <label asp-for="Username" class="form-label">Username</label>
+                <input asp-for="Username" class="form-control" placeholder="Johndoee" /> @*bunların renginin yeşil olmasının sebebi artık html tagı değil taghelper olduğunun belirtisidir.MVC'den*@
+                <span asp-validation-for="Username" class="text-danger small"></span> @*username ile ilgili hataları burada göster*@
+           </div>
+            <div class="form-grup mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="P@ssWOrd!" />
+                <span asp-validation-for="Password" class="text-danger small"></span> @*password ile ilgili hataları burada göster*@
+           </div>
+            <div class="form-grup d-grid mb-3"> @*LOGİNİ KOLONUN İÇİNE YAYMAK İSTEDİĞİM İÇİN DİSPLAY GRİD VERİYORUZ*@
+                <button type="submit" class="btn btn-primary d-block"> Login <i class="fa-solid fa-right-to-bracket me-2"></i></button>
+            </div>
+       </form>  
+
+    </div>
+</div>

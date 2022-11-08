@@ -1,0 +1,14 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace WebApplication1.Entities
+{
+    public class DatabaseContext : DbContext
+    {
+        public DatabaseContext(DbContextOptions options) : base(options) //constructor oluşturuyoruz
+        {
+        }
+
+        public DbSet<User> Users{ get; set; }
+       
+    }
+}
